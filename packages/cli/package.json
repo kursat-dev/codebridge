@@ -1,0 +1,40 @@
+{
+    "name": "corebridge",
+    "version": "0.1.0",
+    "description": "CLI tool for extracting platform-agnostic business logic",
+    "bin": {
+        "corebridge": "./dist/cli.js"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "templates"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch",
+        "test": "node --test dist/**/*.test.js",
+        "clean": "rm -rf dist"
+    },
+    "dependencies": {
+        "commander": "^11.1.0",
+        "chalk": "^5.3.0",
+        "ora": "^8.0.1",
+        "fs-extra": "^11.2.0",
+        "glob": "^10.3.10",
+        "yaml": "^2.3.4",
+        "typescript": "^5.3.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "@types/fs-extra": "^11.0.4"
+    },
+    "keywords": [
+        "cli",
+        "corebridge",
+        "platform-agnostic",
+        "code-generation"
+    ],
+    "license": "MIT"
+}
