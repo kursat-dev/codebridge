@@ -1,0 +1,17 @@
+{
+  "name": "@corebridge/contracts",
+  "version": "0.1.0",
+  "description": "OpenAPI specs and JSON Schemas",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "openapi",
+    "schemas"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "license": "MIT"
+}

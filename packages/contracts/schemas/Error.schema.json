@@ -1,0 +1,50 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://corebridge.dev/schemas/Error",
+    "title": "Error",
+    "description": "Standard error response format",
+    "type": "object",
+    "properties": {
+        "code": {
+            "type": "string",
+            "description": "Error code for programmatic handling",
+            "enum": [
+                "VALIDATION_ERROR",
+                "NOT_FOUND",
+                "RESOURCE_EXISTS",
+                "UNAUTHORIZED",
+                "FORBIDDEN"
+            ]
+        },
+        "message": {
+            "type": "string",
+            "description": "Human-readable error message"
+        },
+        "fields": {
+            "type": "array",
+            "description": "Field-level validation errors (for VALIDATION_ERROR)",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "field": {
+                        "type": "string",
+                        "description": "Field path that caused the error"
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "Validation error message"
+                    }
+                },
+                "required": [
+                    "field",
+                    "message"
+                ]
+            }
+        }
+    },
+    "required": [
+        "code",
+        "message"
+    ],
+    "additionalProperties": false
+}
